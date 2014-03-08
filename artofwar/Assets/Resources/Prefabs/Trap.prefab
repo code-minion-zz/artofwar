@@ -232,10 +232,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 100002}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ffb4f6a3ca787ae4083e420a19bfc0d7, type: 3}
+  m_Script: {fileID: 11500000, guid: 2af5a1f81d20d3546b1a55164e70cf03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Triggered: 0
+  DiscriminateString: Player
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -287,7 +288,7 @@ MonoBehaviour:
   eventReceiver: {fileID: 0}
   callWhenFinished: 
   from: {x: 0, y: 0, z: -1}
-  to: {x: 0, y: 0, z: .5}
+  to: {x: 0, y: 0, z: .400000006}
   worldSpace: 0
 --- !u!114 &11400006
 MonoBehaviour:

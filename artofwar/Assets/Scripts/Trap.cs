@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Trap : MonoBehaviour {
 
-	public TrapTrigger trapTrigger;
+	public GameTrigger trapTrigger;
 	public UITweener trapAction;
 	public enum EState
 	{
@@ -60,7 +60,7 @@ public class Trap : MonoBehaviour {
 
 	void ResetAction()
 	{
-		trapTrigger.GetComponent<TrapTrigger>().Triggered = false;
+		trapTrigger.GetComponent<GameTrigger>().Triggered = false;
 		myState = EState.Resetting;
 		trapAction.PlayReverse();
 	}

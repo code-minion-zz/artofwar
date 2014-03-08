@@ -19,7 +19,7 @@ public class TriggerBubble : MonoBehaviour {
 		{
 			if (GetComponent<UITweener>().enabled)
 			{
-				NGUITools.FindInParents<Trap>(transform).TrapHit(other.gameObject);
+				SendMessageUpwards("TrapHit", other.gameObject, SendMessageOptions.DontRequireReceiver);
 			}
 		}
 	}
