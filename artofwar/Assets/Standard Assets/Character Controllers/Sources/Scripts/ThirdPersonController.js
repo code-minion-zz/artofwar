@@ -384,6 +384,7 @@ function Update() {
 			SendMessage("DidLand", SendMessageOptions.DontRequireReceiver);
 		}
 	}
+	
 }
 
 function OnControllerColliderHit (hit : ControllerColliderHit )
