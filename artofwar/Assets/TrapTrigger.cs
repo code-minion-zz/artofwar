@@ -18,7 +18,7 @@ public class TrapTrigger : MonoBehaviour {
 	void OnTriggerEnter(Collider other)
 	{
 		if (Triggered) return;
-		if (other.gameObject.layer == LayerMask.NameToLayer("Character"))
+		if (other.gameObject.CompareTag("Player"))
 		{
 			Triggered = true;
 			NGUITools.FindInParents<Trap>(transform).TrapTriggered();
