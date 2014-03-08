@@ -2066,13 +2066,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cameraTransform: {fileID: 0}
   distance: 3
-  height: 1
+  height: 2
   angularSmoothLag: .100000001
   angularMaxSpeed: 175
   heightSmoothLag: .300000012
   snapSmoothLag: .200000003
   snapMaxSpeed: 720
-  clampHeadPositionScreenSpace: .75
+  clampHeadPositionScreenSpace: 2
   lockCameraTimeout: .200000003
 --- !u!1002 &11400001
 EditorExtensionImpl:

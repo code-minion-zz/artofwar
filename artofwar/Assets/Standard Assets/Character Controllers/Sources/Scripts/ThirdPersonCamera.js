@@ -83,7 +83,7 @@ function Apply (dummyTarget : Transform, dummyCenter : Vector3)
 	
 	var targetCenter = _target.position + centerOffset;
 	var targetHead = _target.position + headOffset;
-
+	
 //	DebugDrawStuff();
 
 	// Calculate the current & target rotation angles
@@ -198,7 +198,7 @@ function SetUpRotation (centerPos : Vector3, headPos : Vector3)
 	// Generate base rotation only around y-axis
 	var yRotation = Quaternion.LookRotation(Vector3(offsetToCenter.x, 0, offsetToCenter.z));
 
-	var relativeOffset = Vector3.forward * distance + Vector3.down * height;
+	var relativeOffset = Vector3.forward * distance + Vector3.down * height + Vector3.down * -1;
 	cameraTransform.rotation = yRotation * Quaternion.LookRotation(relativeOffset);
 
 	// Calculate the projected center position and top position in world space
