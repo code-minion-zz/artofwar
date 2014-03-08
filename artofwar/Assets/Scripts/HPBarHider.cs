@@ -12,17 +12,21 @@ public class HPBarHider : MonoBehaviour {
 	void Start () 
 	{
 		player = GameObject.Find("3rd Person Controller").transform;
-		owner = sprite.leftAnchor.target;
+	}
+
+	public void Initialize(GameObject go)
+	{
+		owner = go.transform;
+		sprite.SetAnchor(go);
 		initialized = true;
 	}
-	
+
 	// Update is called once per frame
 	void Update () 
 	{
 		if (!initialized) return;
 
 		float distance = Vector3.Distance(player.position, owner.position);
-		Debug.Log(distance);
 		if (distance > 20f)
 		{
 			if (sprite.gameObject.activeSelf)
