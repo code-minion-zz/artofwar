@@ -6,7 +6,7 @@ public var trapcount : int = 5;
 public var ponies : ponyswapper;
 
 function Start () {
-	ponies = GameObject.Find("3rd Person Controller").GetComponent(ponyswapper);
+	ponies = GetComponent(ponyswapper);
 }
 
 function Update () {
@@ -37,8 +37,9 @@ function Update () {
 		if (slingcount > 0)
 		{
 			slingcount = slingcount -1;
-			var newbullet = Instantiate(Resources.Load("Prefabs/Bullet"),transform.position + Vector3(0,2,0), transform.rotation); 	
-			newbullet.name = "Trap Clone";
+			var newbullet : GameObject= Instantiate(Resources.Load("Prefabs/Bullet"),transform.position, transform.rotation); 	
+			newbullet.rigidbody.AddForce(newbullet.transform.forward * 9000);
+			newbullet.name = "Bullet Clone";
 		}
 		break;
 		}
