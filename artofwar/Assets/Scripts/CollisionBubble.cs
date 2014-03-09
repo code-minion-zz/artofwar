@@ -19,6 +19,16 @@ public class CollisionBubble : MonoBehaviour {
 
 	void OnTriggerEnter(Collider other)
 	{
+		ProcessCollisions(other);
+	}
+
+	void OnCollisionEnter(Collision other)
+	{
+		ProcessCollisions(other.collider);
+	}
+
+	void ProcessCollisions (Collider other)
+	{
 		if (hitOnce) return;
 		string test = other.tag;
 		if (other.CompareTag(DiscriminateTag))

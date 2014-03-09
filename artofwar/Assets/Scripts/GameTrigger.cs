@@ -19,11 +19,21 @@ public class GameTrigger : MonoBehaviour {
 
 	void OnTriggerEnter(Collider other)
 	{
+		ProcessCollisions(other);
+	}
+
+	void OnCollisionEnter (Collision other)
+	{
+		ProcessCollisions(other.collider);
+	}
+		
+	void ProcessCollisions (Collider other)
+	{
 		if (Triggered) return;
 		if (other.gameObject.CompareTag(DiscriminateString))
 		{
 			Triggered = true;
-			SendMessageUpwards(Callback, SendMessageOptions.DontRequireReceiver);
+			SendMessageUpwards(Callback, other.gameObject, SendMessageOptions.DontRequireReceiver);
 			//NGUITools.FindInParents<Trap>(transform).TrapTriggered();
 		}
 	}
