@@ -1055,6 +1055,7 @@ GameObject:
   - 114: {fileID: 680667105}
   - 114: {fileID: 680667104}
   - 114: {fileID: 680667108}
+  - 114: {fileID: 680667107}
   m_Layer: 0
   m_Name: 3rd Person Controller
   m_TagString: Player
@@ -1087,15 +1088,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraTransform: {fileID: 0}
-  distance: 3
-  height: 2
+  distance: 5
+  height: 3
   angularSmoothLag: 1
   angularMaxSpeed: 180
-  heightSmoothLag: .300000012
-  snapSmoothLag: .200000003
-  snapMaxSpeed: 180
-  clampHeadPositionScreenSpace: 3
-  lockCameraTimeout: 0
+  heightSmoothLag: 1
+  snapSmoothLag: 1
+  snapMaxSpeed: 720
+  clampHeadPositionScreenSpace: .75
+  lockCameraTimeout: .200000003
 --- !u!114 &680667105
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1108,16 +1109,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d5ac211a643e447ca78c2d794a16381, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkSpeed: 3
+  walkSpeed: 2
   trotSpeed: 4
-  runSpeed: 8
+  runSpeed: 6
   inAirControlAcceleration: 3
-  jumpHeight: 1
+  jumpHeight: .5
   gravity: 20
   speedSmoothing: 10
   rotateSpeed: 500
-  trotAfterSeconds: 2
-  canJump: 0
+  trotAfterSeconds: 3
+  canJump: 1
 --- !u!143 &680667106
 CharacterController:
   m_ObjectHideFlags: 0
@@ -1133,6 +1134,17 @@ CharacterController:
   m_SkinWidth: .0799999982
   m_MinMoveDistance: 0
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &680667107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 680667102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70e1065d81a9ef14284d74b08d4a42ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &680667108
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1456,6 +1468,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1030199432}
   - 114: {fileID: 1030199433}
+  - 114: {fileID: 1030199434}
   m_Layer: 30
   m_Name: Label
   m_TagString: Untagged
@@ -1536,6 +1549,19 @@ MonoBehaviour:
   mMaxLineHeight: 0
   mLineWidth: 0
   mMultiline: 1
+--- !u!114 &1030199434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400022, guid: cfd745005c3c8fa478e558719ad63977,
+    type: 2}
+  m_PrefabInternal: {fileID: 50252760}
+  m_GameObject: {fileID: 1030199431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9700e0cce6842946ba6d9097050b8a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pLauncher: {fileID: 0}
 --- !u!1 &1037091808
 GameObject:
   m_ObjectHideFlags: 0
