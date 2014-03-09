@@ -45,6 +45,16 @@ public class Trap : MonoBehaviour {
 	public void TrapHit(GameObject other)
 	{
 		if (myState == EState.Firing) Debug.Log(other + " Has Been Trapped!");
+		CharacterController cc = other.GetComponent<CharacterController>();
+		cc.enabled = false;
+		StartCoroutine(Unfreeze(cc));
+	}
+
+	IEnumerator Unfreeze(CharacterController cc)
+	{
+		yield return new WaitForSeconds(3f);
+		cc.enabled = true;
+		Destroy(gameObject);
 	}
 
 	public void TrapTriggered()

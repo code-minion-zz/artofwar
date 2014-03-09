@@ -5,6 +5,13 @@ public class LabelSetter : MonoBehaviour {
 
 	public ProjectileLauncher pLauncher;
 
+	public enum EMode
+	{
+		chicken,
+		bullet,
+		trap
+	}
+	public EMode mode = EMode.chicken;
 
 	// Use this for initialization
 	void Start () {
@@ -15,7 +22,22 @@ public class LabelSetter : MonoBehaviour {
 	void Update () {
 		if (pLauncher)
 		{
-			GetComponent<UILabel>().text = pLauncher.chickencount.ToString();
+			string toUse = "";
+			switch (mode)
+			{
+			case EMode.chicken:
+				toUse = pLauncher.chickencount.ToString();
+				break;
+			case EMode.bullet:
+				toUse = pLauncher.slingcount.ToString();
+				break;
+			case EMode.trap:
+				toUse = pLauncher.trapcount.ToString();
+				break;
+			}
+
+			//GetComponent<UILabel>().text = pLauncher.chickencount.ToString();
+			GetComponent<UILabel>().text = toUse;
 		}
 	}
 }

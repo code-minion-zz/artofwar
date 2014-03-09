@@ -1,9 +1,29 @@
 ﻿#pragma strict
 
 public var chickencount : int = 5;
+public var slingcount : int = 5;
+public var trapcount : int = 5;
+public var ponies : ponyswapper;
+
+function Start () {
+	ponies = GameObject.Find("3rd Person Controller").GetComponent(ponyswapper);
+}
 
 function Update () {
-	if(Input.GetKeyDown("space")) {
+	if(Input.GetKeyDown("space")) 
+	{
+		switch (ponies.character)	
+		{
+		case 0: // trap
+		if (trapcount > 0)
+		{
+			trapcount = trapcount -1;
+			var newtrap : GameObject = Instantiate(Resources.Load("Prefabs/Trap"));
+			newtrap.transform.position = transform.position + transform.forward;
+			newtrap.name = "Trap Clone";
+		}
+		break;
+		case 1: // chicken
 		if(chickencount > 0) {
 			chickencount=chickencount-1;
 			var newchicken=Instantiate(GameObject.Find("Chicken Projectile"),transform.position + Vector3(0,2,0), transform.rotation);
@@ -12,5 +32,16 @@ function Update () {
 			newchicken.rigidbody.AddForce(newchicken.transform.right * Random.Range(-100,100));
 			newchicken.name="Chicken Clone";
 		}
+		break;
+		case 2: // slingshot
+		if (slingcount > 0)
+		{
+			slingcount = slingcount -1;
+			var newbullet = Instantiate(Resources.Load("Prefabs/Bullet"),transform.position + Vector3(0,2,0), transform.rotation); 	
+			newbullet.name = "Trap Clone";
+		}
+		break;
+		}
+	
 	}
 }

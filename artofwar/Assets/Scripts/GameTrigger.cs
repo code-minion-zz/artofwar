@@ -4,7 +4,8 @@ using System.Collections;
 public class GameTrigger : MonoBehaviour {
 
 	public bool Triggered = false;
-	public string DiscriminateString = "Player";
+	public string DiscriminateString = "Enemy";
+	public string Callback = "TrapTriggered";
 
 	// Use this for initialization
 	void Start () 
@@ -22,7 +23,7 @@ public class GameTrigger : MonoBehaviour {
 		if (other.gameObject.CompareTag(DiscriminateString))
 		{
 			Triggered = true;
-			SendMessageUpwards("TrapTriggered", SendMessageOptions.DontRequireReceiver);
+			SendMessageUpwards(Callback, SendMessageOptions.DontRequireReceiver);
 			//NGUITools.FindInParents<Trap>(transform).TrapTriggered();
 		}
 	}
