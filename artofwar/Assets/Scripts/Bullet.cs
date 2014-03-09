@@ -16,6 +16,10 @@ public class Bullet : MonoBehaviour {
 	void ShotHit(GameObject other)
 	{
 		Debug.Log ("HIT");
-		Destroy(other);
+		Health yourHealth = other.GetComponent<Health>();
+		if (yourHealth)
+		{
+			yourHealth.Subtract(1);
+		}
 	}
 }
