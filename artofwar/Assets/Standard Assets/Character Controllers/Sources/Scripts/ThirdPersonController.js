@@ -387,13 +387,13 @@ function Update() {
 			jumping = false;
 			SendMessage("DidLand", SendMessageOptions.DontRequireReceiver);
 		}
-	}
-	
+	}	
 }
 
-function OnControllerColliderHit (hit : ControllerColliderHit )
+function OnTriggerEnter (other : Collider)
 {
-	if (hit.gameObject.tag == "Enemy") {
+	var test = other.gameObject.tag;
+	if (other.gameObject.tag == "Enemy") {
 		Debug.Log("YOU LOSE");
 	}
 }
