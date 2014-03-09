@@ -8,7 +8,7 @@ public class LabelSetter : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	
+		pLauncher = GameObject.Find("3rd Person Controller").GetComponent<ProjectileLauncher>();
 	}
 	
 	// Update is called once per frame
