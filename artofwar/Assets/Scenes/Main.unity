@@ -787,7 +787,7 @@ MonoBehaviour:
   speedSmoothing: 10
   rotateSpeed: 500
   trotAfterSeconds: 3
-  canJump: 1
+  canJump: 0
 --- !u!143 &680667106
 CharacterController:
   m_ObjectHideFlags: 0
@@ -1526,6 +1526,18 @@ Prefab:
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 400026, guid: cfd745005c3c8fa478e558719ad63977, type: 2}
+      propertyPath: m_LocalScale.x
+      value: .00416666688
+      objectReference: {fileID: 0}
+    - target: {fileID: 400026, guid: cfd745005c3c8fa478e558719ad63977, type: 2}
+      propertyPath: m_LocalScale.y
+      value: .00416666688
+      objectReference: {fileID: 0}
+    - target: {fileID: 400026, guid: cfd745005c3c8fa478e558719ad63977, type: 2}
+      propertyPath: m_LocalScale.z
+      value: .00416666688
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cfd745005c3c8fa478e558719ad63977, type: 2}
   m_RootGameObject: {fileID: 1671340332}
@@ -1703,7 +1715,7 @@ Transform:
   m_GameObject: {fileID: 1671340332}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -85, y: 104, z: 0}
-  m_LocalScale: {x: .00465116277, y: .00465116277, z: .00465116277}
+  m_LocalScale: {x: .00416666688, y: .00416666688, z: .00416666688}
   m_Children:
   - {fileID: 1125446610}
   - {fileID: 780699980}

@@ -317,6 +317,8 @@ function Update() {
 	var controller : CharacterController = GetComponent(CharacterController);
 	collisionFlags = controller.Move(movement);
 	
+	
+	
 	// ANIMATION sector
 	/*
 	if(_animation) {
@@ -391,9 +393,9 @@ function Update() {
 
 function OnControllerColliderHit (hit : ControllerColliderHit )
 {
-//	Debug.DrawRay(hit.point, hit.normal);
-	if (hit.moveDirection.y > 0.01) 
-		return;
+	if (hit.gameObject.tag == "Enemy") {
+		Debug.Log("YOU LOSE");
+	}
 }
 
 function GetSpeed () {
